@@ -20,28 +20,37 @@ hbs.registerPartials(partialpath);
 // hbs.registerPartials(partialPath);
 
 app.get('/', (req, res)=>{
-    res.render("applications");
+    res.render("home");
 })
 
-// app.get('/admin', (req, res)=>{
-//     res.render("applications");
-// })
-
-app.get('/messages', (req, res)=>{
-  res.render("messages");
+app.get('/admin', (req, res)=>{
+    res.render("adminHome");
 })
 
+app.get('/admin/requests', (req, res)=>{
+  res.render("adminDataRequests");
+})
 
-app.get('/upload', (req, res)=>{
-    res.render("upload");
+app.get('/admin/upload', (req, res)=>{
+    res.render("adminUpload");
+  })
+  app.get('/admin/delete', (req, res)=>{
+    res.render("adminFileDelete");
   })
 
-  app.get('/update', (req, res)=>{
-    res.render("update");
+  app.get('/admin/queries', (req, res)=>{
+    res.render("adminQueries");
+  })
+
+  app.get('/admin/update', (req, res)=>{
+    res.render("adminUpdate");
+  })
+  app.get('/admin/catalog', (req, res)=>{
+    res.render("adminAddCatalog");
   })
 
   app.get('/logout', (req, res)=>{
-    res.render("logout");
+    res.send("logout");
   })
 
 
